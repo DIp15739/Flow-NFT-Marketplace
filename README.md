@@ -1,3 +1,10 @@
+# Flow-NFT-Marketplace
+
+<br/>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/42184833/129153520-5102d849-6883-4fda-b110-6adebc8a3e63.png"/> 
+</p>
+
 ## Install Flow cli
 
 ***macOS***
@@ -33,33 +40,45 @@
 
 ## Start Flow
 
-***flow Terminal 1***
+### Creating the contract and minting a token
+flow project start-emulator
 
-1. `flow project start-emulator`
+flow project deploy
 
-***flow Terminal 2***
+flow keys generate
 
-01. `flow project deploy`
-02. `flow transactions send transactions/LinkPinnie.cdc`
-03. `flow transactions send transactions/MintPinnie.cdc --signer emulator-account`
-04. `flow scripts execute scripts/CheckPinnieBalance.cdc`
-05. `flow keys generate`
-06. `flow accounts create --key YourNewPublicKey`
-07. `flow transactions status  YourTransactionId`
-08. update second-account key as `flow keys generate` private key in `flow.json`
-09. `flow transactions send transactions/CreateEmptyPinnieVault.cdc --signer second-account`
-10. `flow transactions send transactions/LinkPinnie.cdc --signer second-account`
-11. `flow transactions send transactions/TransferPinnieTokens.cdc --signer emulator-account`
-12. for checking second account balance update `CheckPinnieBalance.cdc` *acct1* address second-account as `flow.json`
-13. `flow scripts execute scripts/CheckPinnieBalance.cdc`
-14. `flow transactions send transactions/ListTokensForSale.cdc`
+flow transactions send ./transactions/MintPinataParty.cdc --signer emulator-account
+
+flow scripts execute ./scripts/CheckTokenMetadata.cdc
+
+### Creating an app to view NFTs created through this contract
+
+### Creating a marketplace to transfer NFTs to others while also transferring the NFT's underlying assets on IPFS
+
+flow transactions send ./transactions/LinkPinnie.cdc
+
+flow transactions send ./transactions/MintPinnie.cdc --signer emulator-account
+
+flow scripts execute ./scripts/CheckPinnieBalance.cdc
+
+#### To make sure to mint some and deposit them into a fresh account for someone else
+
+flow keys generate
+
+flow accounts create --key <NewPublicKey>
+
+flow transactions status <TransactionID>
+
+flow transactions send ./transactions/ListTokensForSale.cdc
+
+flow transactions send ./transactions/CreateEmptyPinnieVault.cdc --signer second-account
+
+flow transactions send ./transactions/LinkPinnie.cdc --signer second-account
+
+flow transactions send ./transactions/TransferPinnieTokens.cdc --signer emulator-account
 
 ## Start React
 
-1. `npm install`
-2. `npm start`
-
-<br/>
-<p align="center">
-<img src="https://user-images.githubusercontent.com/42184833/128836851-ec6a0b46-7692-4d97-b25d-1f6ce9c2d404.png"/> 
-</p>
+1. `cd frontend`
+2. `npm install`
+3. `npm start`

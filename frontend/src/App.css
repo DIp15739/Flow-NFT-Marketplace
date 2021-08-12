@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
 }
+.nav {
+  margin-top: 0.7rem;
+}
 
 button {
   padding: 10;
@@ -17,6 +20,7 @@ button {
   border: none;
   background: rgb(255, 224, 0);
   color: #282828;
+  margin-right: 2rem;
 }
 
 .btn-secondary {
@@ -30,15 +34,13 @@ button {
 }
 
 .token-data {
-  margin-top: 100px;
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .listing {
-  max-width: 30%;
-  padding: 50px;
-  margin: 2.5%;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 2rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }

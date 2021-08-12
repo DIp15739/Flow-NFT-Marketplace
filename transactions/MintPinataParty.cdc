@@ -19,7 +19,7 @@ transaction {
           "swing_velocity": "29", 
           "swing_angle": "45", 
           "rating": "5",
-          "uri": "ipfs://QmRZdc3mAMXpv6Akz9Ekp1y4vDSjazTx2dCQRkxVy1yUj6"
+          "uri": "ipfs://QmfATQNSR2sbFAQwfgycZyzXqYcAT4TXPSeyyMTjekaUR9"
       }
       let newNFT <- self.minterRef.mintNFT()
   
